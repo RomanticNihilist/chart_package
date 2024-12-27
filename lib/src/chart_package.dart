@@ -361,6 +361,12 @@ List<ColumnChartData> getColumnChartData() {
 
   return chartData;
 }
+class ChartData {
+  final String x;
+  final double y;
+
+  ChartData(this.x, this.y);
+}
 
 class ChartComponent extends StatefulWidget {
   const ChartComponent({super.key});
@@ -1133,13 +1139,6 @@ class BarChartsState extends State<BarCharts> {
       ],
     );
   }
-}
-
-class ChartData {
-  final String x;
-  final double y;
-
-  ChartData(this.x, this.y);
 }
 
 class ConfigurationData {
