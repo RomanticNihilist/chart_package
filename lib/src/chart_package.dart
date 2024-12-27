@@ -356,7 +356,6 @@ class ChartComponent extends StatefulWidget{
 
   @override
   State<ChartComponent> createState() {
-    // TODO: implement createState
     return _ChartComponentState();
   }
 }
