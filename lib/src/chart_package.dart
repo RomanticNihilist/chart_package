@@ -337,10 +337,6 @@ List<ChartData> getChartData() {
   return chartData;
 }
 
-void main() {
-  runApp(ChartComponent());
-}
-
 List<ColumnChartData> getColumnChartData() {
   List<Map<String, dynamic>> inputData = [
     {"quarter": "Q1", "sumOfRevenue": 128637.29391764},
@@ -369,6 +365,11 @@ class ChartData {
   final double y;
 
   ChartData(this.x, this.y);
+}
+
+
+void main() {
+  runApp(ChartComponent());
 }
 
 class ChartComponent extends StatefulWidget {
