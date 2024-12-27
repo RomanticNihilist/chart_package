@@ -1135,11 +1135,6 @@ class BarChartsState extends State<BarCharts> {
   }
 }
 
-extension on List<ChartData> {
-}
-
-//  final ChartValueMapper<T, D>? xValueMapper;
-// final ChartValueMapper<T, num>? yValueMapper;
 class ChartData {
   final String x;
   final double y;
