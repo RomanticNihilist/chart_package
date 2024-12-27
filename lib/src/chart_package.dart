@@ -6,6 +6,7 @@ double parseFormattedRevenue(String revenue) {
   String sanitizedRevenue = revenue.replaceAll(',', '');
   return double.parse(sanitizedRevenue);
 }
+
 List<ChartData> getChartData() {
   List<Map<String, dynamic>> projects = [
     {
@@ -335,6 +336,7 @@ List<ChartData> getChartData() {
   }
   return chartData;
 }
+
 void main() {
   runApp(ChartComponent());
 }
