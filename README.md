@@ -102,4 +102,4 @@ void main() {
 You can add support for more chart types by extending the `ChartType` enum and updating the `_makeChart` function in the `ChartComponent` class.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Beshi pKmi korar aage amake jiggesh korbe as always
