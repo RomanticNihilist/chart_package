@@ -30,110 +30,76 @@ flutter pub get
 ```
 
 ## Usage
+To use the `ChartComponent`, follow these steps:
 
-To use the chart widgets in your Flutter application, create instances of `BarCharts` or `ColumnCharts` and provide the necessary data and configuration.
-
-### Example Usage of `BarCharts`:
-
+### Step 1: Import the Required Packages
 ```dart
-void main(){
-  BarCharts(
-    data: [
-      ChartData('Project A', 1000),
-      ChartData('Project B', 1500),
-      ChartData('Project C', 2000),
-    ],
-    configuration: ConfigurationData(
-      titleX: "Projects",
-      titleY: "Actual Revenue",
-      showLegend: true,
-      legendPosition: LegendPosition.top,
-      barColor: [Colors.blue, Colors.green, Colors.orange],
-      isDynamicColor: true,
-      onHitEvent: (BuildContext context, ChartData data) {
-        return Container(child: Text('Tapped on ${data.x}: ${data.y}'));
-      },
-    ),
-  );
+import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+```
+
+### Step 2: Prepare Your Data
+You need to provide `xData` and `yData` as lists of dynamic values:
+```dart
+final List<dynamic> xData = ['Jan', 'Feb', 'Mar', 'Apr', 'May'];
+final List<dynamic> yData = [100, 200, 300, 400, 500];
+```
+
+### Step 3: Use the `ChartComponent` Widget
+Create an instance of the `ChartComponent` widget and provide the required parameters:
+```dart
+void main() {
+  runApp(ChartComponent(
+    xData,
+    yData,
+    true, // showLegend
+    true, // enableTooltip
+    ChartType.pie, // Chart type: line, bar, or pie
+  ));
 }
 ```
 
-### Example Usage of `AnotherPage` (with predefined chart data):
+## API Reference
 
+### `ChartComponent` Parameters
+- **xData**: A list of dynamic values for the x-axis.
+- **yData**: A list of dynamic values for the y-axis.
+- **showLegend**: A boolean to enable or disable the chart legend.
+- **enableTooltip**: A boolean to enable or disable tooltips.
+- **chartType**: An enum value specifying the chart type (`ChartType.line`, `ChartType.bar`, or `ChartType.pie`).
+
+### Chart Types
 ```dart
-void main(){
-  AnotherPage(
-    data: ChartData('Example', 1500),
-  );
+enum ChartType {
+  line,
+  bar,
+  pie,
 }
 ```
 
-### Chart Configuration:
+### Data Type Compatibility
+- `xData` and `yData` can contain both numeric and string values.
+- Ensure that `xData` and `yData` have the same length.
 
-The `ConfigurationData` object allows you to customize various aspects of the chart:
-
-- **`typeOfXAxis`**: The type of the X-axis (`Category`, `Numeric`, `Date-time`, `Logarithmic`).
-- **`typeOfYAxis`**: The type of the Y-axis (`Category`, `Numeric`, `Date-time`, `Logarithmic`).
-- **`height`**: The height of the chart.
-- **`showLegend`**: Toggle legend visibility.
-- **`legendPosition`**: Position of the legend (`top`, `bottom`, `left`, `right`).
-- **`barColor`**: List of colors for dynamic coloring of bars/columns.
-- **`isDynamicColor`**: Enable dynamic colors for bars/columns.
-- **`onHitEvent`**: A callback function triggered when a bar or column is tapped.
-
-### Example of Custom Event for Bar Chart:
-
+### Example
+Here is an example with sample data:
 ```dart
-void main(){
-  ConfigurationData(
-    onHitEvent: (BuildContext context, ChartData data) {
-      return Container(child: Text('Tapped on ${data.x}: ${data.y}'));
-    },
-  );
+void main() {
+  final List<dynamic> xData = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  final List<dynamic> yData = [20, 35, 50, 15, 40];
+
+  runApp(ChartComponent(
+    xData,
+    yData,
+    true, // Show legend
+    true, // Enable tooltip
+    ChartType.bar, // Display bar chart
+  ));
 }
 ```
 
-### ChartData:
-
-- **x**: The label for the X-axis.
-- **y**: The value for the Y-axis.
-
-## Contributing
-
-Feel free to fork the repository, create a new branch, and submit pull requests for new features or bug fixes. If you're using this package, open issues or provide feedback to improve it.
-
-### Fork and Clone the Repo
-
-1. Fork the repository by clicking the "Fork" button at the top right of this page.
-2. Clone the repository to your local machine:
-
-```bash
-git clone https://github.com/RomanticNihilist/chart_package.git
-```
-
-3. Create a new branch for your changes:
-
-```bash
-git checkout -b feature-name
-```
-
-4. Commit your changes:
-
-```bash
-git commit -am "Description of changes"
-```
-
-5. Push your changes to your fork:
-
-```bash
-git push origin feature-name
-```
-
-6. Create a pull request to the main repository.
+## Extending Functionality
+You can add support for more chart types by extending the `ChartType` enum and updating the `_makeChart` function in the `ChartComponent` class.
 
 ## License
-
-This project is open-source and available under the MIT License. See the [LICENSE](LICENSE) file for more information.
-```
-
-This markdown format follows GitHub's standard and will render correctly on the platform. Let me know if you need further modifications!
+This project is licensed under the MIT License. See the LICENSE file for details.
