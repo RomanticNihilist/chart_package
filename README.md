@@ -1,39 +1,22 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Chart Package
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package for creating interactive and customizable bar and column charts. This package allows you to easily visualize data with support for dynamic coloring, tooltips, and event handling.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Bar Chart and Column Chart**: Create bar and column charts with various configurations.
+- **Customizable Axes**: Configure the X and Y axes as `Numeric`, `Category`, `Date-time`, or `Logarithmic`.
+- **Interactive Tooltips**: Tooltips are displayed when tapping or hovering over chart data points.
+- **Dynamic Colors**: Support for dynamic coloring of chart bars based on the index of data.
+- **Custom Events**: Handle chart data point taps with a customizable event handler.
+- **Legend**: Toggle the visibility and position of the chart legend.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the following dependency to your `pubspec.yaml` file:
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```yaml
+dependencies:
+  chart_package:
+    git:
+      url: https://github.com/RomanticNihilist/chart_package.git
