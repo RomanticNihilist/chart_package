@@ -361,6 +361,7 @@ List<ColumnChartData> getColumnChartData() {
 
   return chartData;
 }
+
 class ChartData {
   final String x;
   final double y;
