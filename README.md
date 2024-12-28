@@ -17,10 +17,12 @@ dependencies:
   chart_package:
     git:
       url: https://github.com/RomanticNihilist/chart_package.git
-  syncfusion_flutter_charts: ^28.1.36
 
 ```
 Then, run:
+```sh
+flutter pub add syncfusion_flutter_charts
+```
 
 ```sh
 flutter pub get
