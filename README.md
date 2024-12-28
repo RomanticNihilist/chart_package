@@ -1,105 +1,94 @@
-```markdown
-# Chart Package
+# ChartComponent Flutter Package
 
-A Flutter package for creating interactive and customizable bar and column charts. This package allows you to easily visualize data with support for dynamic coloring, tooltips, and event handling.
+## Overview
+The `ChartComponent` is a generic chart package built using the Syncfusion Flutter chart library. It supports multiple chart types, including Line, Bar, and Pie charts. The package dynamically generates charts based on the data provided and offers features such as tooltips and legends.
 
 ## Features
+- Supports Line, Bar, and Pie charts (extensible for more types).
+- Dynamically renders charts based on the input data.
+- Configurable legend visibility and tooltip enablement.
+- Centralized handling of xData and yData for all chart types.
 
-- **Bar Chart and Column Chart**: Create bar and column charts with various configurations.
-- **Customizable Axes**: Configure the X and Y axes as `Numeric`, `Category`, `Date-time`, or `Logarithmic`.
-- **Interactive Tooltips**: Tooltips are displayed when tapping or hovering over chart data points.
-- **Dynamic Colors**: Support for dynamic coloring of chart bars based on the index of data.
-- **Custom Events**: Handle chart data point taps with a customizable event handler.
-- **Legend**: Toggle the visibility and position of the chart legend.
-
-## Installation
-
-Add the following dependency to your `pubspec.yaml` file:
+## Prerequisites
+- Add the Syncfusion Flutter chart package to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
   chart_package:
     git:
       url: https://github.com/RomanticNihilist/chart_package.git
-```
+  syncfusion_flutter_charts: ^28.1.36
 
-Then run:
-
-```bash
-flutter pub get
 ```
 
 ## Usage
-To use the `ChartComponent`, follow these steps:
 
-### Step 1: Import the Required Packages
+### 1. Data Preparation
+Ensure that the `xData` and `yData` are properly formatted and meet the data type criteria for the selected chart type:
+- **Line Chart**: Numerical values are recommended for both x and y axes.
+- **Bar Chart**: `xData` should preferably be categorical, while `yData` should be numerical.
+- **Pie Chart**: `xData` can be categorical, and `yData` should be numerical.
+
+### 2. Implementing the ChartComponent
+Import the required dependencies and set up the `ChartComponent` widget:
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-```
+import 'chart_component.dart'; // Adjust based on file structure
 
-### Step 2: Prepare Your Data
-You need to provide `xData` and `yData` as lists of dynamic values:
-```dart
-final List<dynamic> xData = ['Jan', 'Feb', 'Mar', 'Apr', 'May'];
-final List<dynamic> yData = [100, 200, 300, 400, 500];
-```
-
-### Step 3: Use the `ChartComponent` Widget
-Create an instance of the `ChartComponent` widget and provide the required parameters:
-```dart
 void main() {
-  runApp(ChartComponent(
-    xData,
-    yData,
-    true, // showLegend
-    true, // enableTooltip
-    ChartType.pie, // Chart type: line, bar, or pie
-  ));
+  final List<dynamic> xData = ["Category A", "Category B", "Category C"];
+  final List<dynamic> yData = [10, 20, 30];
+  runApp(ChartComponent(xData, yData, true, true, ChartType.pie));
 }
 ```
 
-## API Reference
+### 3. Parameters
+The `ChartComponent` widget accepts the following parameters:
 
-### `ChartComponent` Parameters
-- **xData**: A list of dynamic values for the x-axis.
-- **yData**: A list of dynamic values for the y-axis.
-- **showLegend**: A boolean to enable or disable the chart legend.
-- **enableTooltip**: A boolean to enable or disable tooltips.
-- **chartType**: An enum value specifying the chart type (`ChartType.line`, `ChartType.bar`, or `ChartType.pie`).
+| Parameter       | Type              | Description                                         |
+|-----------------|-------------------|-----------------------------------------------------|
+| `xData`         | `List<dynamic>`   | Data for the x-axis or categories.                 |
+| `yData`         | `List<dynamic>`   | Data for the y-axis or values.                     |
+| `showLegend`    | `bool`            | Toggles the legend visibility.                     |
+| `enableTooltip` | `bool`            | Enables or disables tooltips for the chart.        |
+| `chartType`     | `ChartType`       | Specifies the type of chart to render.             |
 
-### Chart Types
+### 4. Example Chart Types
+#### Line Chart
 ```dart
-enum ChartType {
-  line,
-  bar,
-  pie,
+void main(){
+  ChartComponent(xData, yData, true, true, ChartType.line);
 }
 ```
 
-### Data Type Compatibility
-- `xData` and `yData` can contain both numeric and string values.
-- Ensure that `xData` and `yData` have the same length.
-
-### Example
-Here is an example with sample data:
+#### Bar Chart
 ```dart
-void main() {
-  final List<dynamic> xData = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
-  final List<dynamic> yData = [20, 35, 50, 15, 40];
-
-  runApp(ChartComponent(
-    xData,
-    yData,
-    true, // Show legend
-    true, // Enable tooltip
-    ChartType.bar, // Display bar chart
-  ));
+void main(){
+  ChartComponent(xData, yData, false, true, ChartType.bar);
 }
 ```
 
-## Extending Functionality
-You can add support for more chart types by extending the `ChartType` enum and updating the `_makeChart` function in the `ChartComponent` class.
+#### Pie Chart
+```dart
+void main(){
+  ChartComponent(xData, yData, true, false, ChartType.pie);
+}
+```
+
+## Notes
+- Ensure the data types of `xData` and `yData` are compatible with the Syncfusion chart requirements.
+- For `Pie Charts`, `xData` should be a category, and `yData` should be numerical.
+- The `_parseToNum` function ensures the conversion of string values to numerical types, providing robustness for numeric y-axis data.
+
+## Extending the Package
+To add support for additional chart types:
+1. Update the `ChartType` enum.
+2. Add a new case to the `_makeChart()` method with the respective Syncfusion chart implementation.
+
+## Dependencies
+- [Syncfusion Flutter Charts](https://pub.dev/packages/syncfusion_flutter_charts)
 
 ## License
-Beshi pKmi korar aage amake jiggesh korbe as always
+This project is licensed under the MIT License.
