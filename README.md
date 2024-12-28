@@ -41,8 +41,7 @@ Import the required dependencies and set up the `ChartComponent` widget:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'chart_component.dart'; // Adjust based on file structure
+import 'package:chart_package/chart_package.dart';
 
 void main() {
   final List<dynamic> xData = ["Category A", "Category B", "Category C"];
