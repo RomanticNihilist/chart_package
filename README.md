@@ -20,6 +20,11 @@ dependencies:
   syncfusion_flutter_charts: ^28.1.36
 
 ```
+Then, run:
+
+```sh
+flutter pub get
+```
 
 ## Usage
 
