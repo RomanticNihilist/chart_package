@@ -61,6 +61,7 @@ The `ChartComponent` widget accepts the following parameters:
 | `enableTooltip` | `bool`            | Enables or disables tooltips for the chart.        |
 | `chartType`     | `ChartType`       | Specifies the type of chart to render.             |
 
+In the future we can add more parameters to this widget like background colour, gradient etc.  
 ### 4. Example Chart Types
 #### Line Chart
 ```dart
