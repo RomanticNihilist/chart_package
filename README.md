@@ -65,21 +65,24 @@ The `ChartComponent` widget accepts the following parameters:
 #### Line Chart
 ```dart
 void main(){
-  ChartComponent(xData, yData, true, true, ChartType.line);
+  /* We need to keep in mind the preferred DataTypes of xData and yData for specific chart type */
+  runApp(ChartComponent(xData, yData, true, true, ChartType.line));
 }
 ```
 
 #### Bar Chart
 ```dart
 void main(){
-  ChartComponent(xData, yData, false, true, ChartType.bar);
+  /* We need to keep in mind the preferred DataTypes of xData and yData for specific chart type */
+  runApp(ChartComponent(xData, yData, false, true, ChartType.bar));
 }
 ```
 
 #### Pie Chart
 ```dart
 void main(){
-  ChartComponent(xData, yData, true, false, ChartType.pie);
+  /* We need to keep in mind the preferred DataTypes of xData and yData for specific chart type */
+  runApp(ChartComponent(xData, yData, true, false, ChartType.pie));
 }
 ```
 
