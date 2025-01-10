@@ -14,7 +14,7 @@ The `ChartComponent` is a generic chart package built using the Syncfusion Flutt
 
 ## Screenshot
 
-![Alt text](https://i.imgur.com/tj76cmT.png) "a title")
+![Alt text](https://i.imgur.com/s5mCMNS.png "a title")
 
 ```yaml
 dependencies:
