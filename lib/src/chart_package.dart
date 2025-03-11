@@ -316,7 +316,7 @@ List<Map<String, dynamic>> projects = [
   }
 ];
 
-enum ChartType { line, bar, pie, stackedColumnChart }
+enum ChartType { line, bar, pie, stackedColumnChart, columnChart}
 
 List<dynamic> getxData(String key) {
   return projects
@@ -489,6 +489,21 @@ class _ChartComponentState extends State<ChartComponent> {
               xValueMapper: (data, _) => data.sector,
               yValueMapper: (data, _) => data.suspendedCount,
               name: 'Suspended',
+            ),
+          ],
+        );
+      case ChartType.columnChart:
+      // For a column chart, the widget expects xData and yData as separate lists.
+        List<_ChartData> combinedData = _combineData(widget.xData, widget.yData);
+        return SfCartesianChart(
+          primaryXAxis: CategoryAxis(),
+          legend: legend,
+          tooltipBehavior: widget.enableTooltip ? TooltipBehavior(enable: true) : null,
+          series: <CartesianSeries>[
+            ColumnSeries<_ChartData, dynamic>(
+              dataSource: combinedData,
+              xValueMapper: (data, _) => data.x,
+              yValueMapper: (data, _) => _parseToNum(data.y),
             ),
           ],
         );
