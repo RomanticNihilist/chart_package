@@ -504,6 +504,7 @@ class _ChartComponentState extends State<ChartComponent> {
               dataSource: combinedData,
               xValueMapper: (data, _) => data.x,
               yValueMapper: (data, _) => _parseToNum(data.y),
+              borderRadius: BorderRadius.all(Radius.circular(15)),
             ),
           ],
         );
