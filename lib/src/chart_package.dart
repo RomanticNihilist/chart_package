@@ -5,7 +5,7 @@ List<Map<String, dynamic>> projects = [
   {
     "projectManager": "95254903-82c5-42da-bb0f-0f834de3cebf",
     "groupAssigneesEditStr":
-    "Product_Owner_12959825-b50b-4a57-9e6f-df92c0ea572a,Scrum_Team_12959825-b50b-4a57-9e6f-df92c0ea572a,Edit_Scrum_12959825-b50b-4a57-9e6f-df92c0ea572a,Project_Manager_MGMT_12959825-b50b-4a57-9e6f-df92c0ea572a",
+        "Product_Owner_12959825-b50b-4a57-9e6f-df92c0ea572a,Scrum_Team_12959825-b50b-4a57-9e6f-df92c0ea572a,Edit_Scrum_12959825-b50b-4a57-9e6f-df92c0ea572a,Project_Manager_MGMT_12959825-b50b-4a57-9e6f-df92c0ea572a",
     "projectImage": "",
     "contractedEndDate": "2024-10-15",
     "createdOn": "2024-10-16T06:02:11Z",
@@ -67,7 +67,7 @@ List<Map<String, dynamic>> projects = [
   {
     "projectManager": "95254903-82c5-42da-bb0f-0f834de3cebf",
     "groupAssigneesEditStr":
-    "Product_Owner_c99b69e4-e2c9-458e-a38a-19a54117b8a6,Scrum_Team_c99b69e4-e2c9-458e-a38a-19a54117b8a6,Edit_Scrum_c99b69e4-e2c9-458e-a38a-19a54117b8a6,Project_Manager_MGMT_c99b69e4-e2c9-458e-a38a-19a54117b8a6",
+        "Product_Owner_c99b69e4-e2c9-458e-a38a-19a54117b8a6,Scrum_Team_c99b69e4-e2c9-458e-a38a-19a54117b8a6,Edit_Scrum_c99b69e4-e2c9-458e-a38a-19a54117b8a6,Project_Manager_MGMT_c99b69e4-e2c9-458e-a38a-19a54117b8a6",
     "projectImage": "",
     "contractedEndDate": "2024-10-22",
     "createdOn": "2024-10-16T06:06:50Z",
@@ -125,7 +125,7 @@ List<Map<String, dynamic>> projects = [
   {
     "projectManager": "5c502abb-af58-4317-9f31-02d97dae7a8f",
     "groupAssigneesEditStr":
-    "Product_Owner_f570ef2b-05ad-45d4-a173-100c2437bce3,Scrum_Team_f570ef2b-05ad-45d4-a173-100c2437bce3,Edit_Scrum_f570ef2b-05ad-45d4-a173-100c2437bce3,Project_Manager_MGMT_f570ef2b-05ad-45d4-a173-100c2437bce3",
+        "Product_Owner_f570ef2b-05ad-45d4-a173-100c2437bce3,Scrum_Team_f570ef2b-05ad-45d4-a173-100c2437bce3,Edit_Scrum_f570ef2b-05ad-45d4-a173-100c2437bce3,Project_Manager_MGMT_f570ef2b-05ad-45d4-a173-100c2437bce3",
     "projectImage": "",
     "contractedEndDate": "2024-01-31",
     "createdOn": "2023-12-05T05:21:49Z",
@@ -186,7 +186,7 @@ List<Map<String, dynamic>> projects = [
   {
     "projectManager": "a4118a20-3344-4f68-9e8c-40218fb3ee1a",
     "groupAssigneesEditStr":
-    "Product_Owner_544553fb-bec5-4303-92e7-515a1712108e,Scrum_Team_544553fb-bec5-4303-92e7-515a1712108e,Edit_Scrum_544553fb-bec5-4303-92e7-515a1712108e,Project_Manager_MGMT_544553fb-bec5-4303-92e7-515a1712108e",
+        "Product_Owner_544553fb-bec5-4303-92e7-515a1712108e,Scrum_Team_544553fb-bec5-4303-92e7-515a1712108e,Edit_Scrum_544553fb-bec5-4303-92e7-515a1712108e,Project_Manager_MGMT_544553fb-bec5-4303-92e7-515a1712108e",
     "projectImage": "",
     "projectNumber": "D304870",
     "contractedEndDate": "2023-03-24",
@@ -259,7 +259,7 @@ List<Map<String, dynamic>> projects = [
   {
     "projectManager": "a4118a20-3344-4f68-9e8c-40218fb3ee1a",
     "groupAssigneesEditStr":
-    "Product_Owner_2f9a03db-9a8e-4557-a172-da9fa587be99,Scrum_Team_2f9a03db-9a8e-4557-a172-da9fa587be99,Edit_Scrum_2f9a03db-9a8e-4557-a172-da9fa587be99,Project_Manager_MGMT_2f9a03db-9a8e-4557-a172-da9fa587be99",
+        "Product_Owner_2f9a03db-9a8e-4557-a172-da9fa587be99,Scrum_Team_2f9a03db-9a8e-4557-a172-da9fa587be99,Edit_Scrum_2f9a03db-9a8e-4557-a172-da9fa587be99,Project_Manager_MGMT_2f9a03db-9a8e-4557-a172-da9fa587be99",
     "projectImage": "",
     "contractedEndDate": "2024-10-19",
     "createdOn": "2024-10-16T05:59:33Z",
@@ -316,28 +316,30 @@ List<Map<String, dynamic>> projects = [
   }
 ];
 
-enum ChartType {line, bar, pie} /*can be updated to support more chart types */
-List<dynamic> getxData(String key){
+enum ChartType { line, bar, pie, stackedColumnChart }
+
+List<dynamic> getxData(String key) {
   return projects
       .map((project) => project[key])
       .where((value) => value != null)
       .toList();
 }
 
-List<dynamic> getyData(String key){
+List<dynamic> getyData(String key) {
   return projects
       .map((project) => project[key])
       .where((value) => value != null)
       .toList();
 }
-
 
 void main() {
-  final List<dynamic> xData = getxData("formattedActualRevenueIncludingVAT_deal");
+  final List<dynamic> xData =
+      getxData("formattedActualRevenueIncludingVAT_deal");
   final List<dynamic> yData = [100, 200, 300, 400, 500];
   runApp(ChartComponent(xData, yData, true, true, ChartType.pie));
 }
 
+/// A generic data holder used for line, bar, and pie charts.
 class _ChartData {
   final dynamic x;
   final dynamic y;
@@ -345,29 +347,55 @@ class _ChartData {
   _ChartData(this.x, this.y);
 }
 
+/// Data class representing sector-wise deal data.
+class SectorWiseDealData {
+  final String sector;
+  final int wonCount;
+  final int openCount;
+  final int lostCount;
+  final int suspendedCount;
 
-class ChartComponent extends StatefulWidget{
+  SectorWiseDealData(this.sector, this.wonCount, this.openCount, this.lostCount,
+      this.suspendedCount);
+
+  factory SectorWiseDealData.fromMap(Map<String, dynamic> map) {
+    return SectorWiseDealData(
+      map['sector'] ?? '',
+      map['wonCount'] ?? 0,
+      map['openCount'] ?? 0,
+      map['lostCount'] ?? 0,
+      map['suspendedCount'] ?? 0,
+    );
+  }
+}
+
+/// Main ChartComponent widget.
+/// - For basic charts (line, bar, pie): Pass [xData] and [yData] lists.
+/// - For stacked column chart: Pass a list of [SectorWiseDealData] objects as [xData].
+class ChartComponent extends StatefulWidget {
   final List<dynamic> xData;
   final List<dynamic> yData;
   final bool showLegend;
   final bool enableTooltip;
   final ChartType chartType;
-  const ChartComponent(this.xData, this.yData, this.showLegend, this.enableTooltip, this.chartType, {super.key});
+
+  const ChartComponent(this.xData, this.yData, this.showLegend,
+      this.enableTooltip, this.chartType,
+      {Key? key})
+      : super(key: key);
 
   @override
-  State<ChartComponent> createState() {
-    return _ChartComponentState();
-  }
+  State<ChartComponent> createState() => _ChartComponentState();
 }
 
 class _ChartComponentState extends State<ChartComponent> {
-  // Combines xData and yData into a single data source for the chart
+  /// Combines xData and yData into a single data source for the chart (used for line, bar, pie).
   List<_ChartData> _combineData(List<dynamic> xData, List<dynamic> yData) {
-    return List.generate(xData.length, (index) {
-      return _ChartData(xData[index], yData[index]);
-    });
+    return List.generate(
+        xData.length, (index) => _ChartData(xData[index], yData[index]));
   }
 
+  /// Parses a dynamic value into a number.
   num _parseToNum(dynamic value) {
     if (value is String) {
       return num.tryParse(value) ?? 0; // Returns 0 if parsing fails
@@ -376,21 +404,18 @@ class _ChartComponentState extends State<ChartComponent> {
   }
 
   Widget _makeChart() {
-    Legend legend;
-    if (widget.showLegend) {
-      legend = Legend(isVisible: true);
-    } else {
-      legend = Legend(isVisible: false);
-    }
-
-    List<_ChartData> combinedData = _combineData(widget.xData, widget.yData);
+    // Create a legend widget based on the provided flag.
+    final Legend legend = Legend(isVisible: widget.showLegend);
 
     switch (widget.chartType) {
       case ChartType.line:
+        List<_ChartData> combinedData =
+            _combineData(widget.xData, widget.yData);
         return SfCartesianChart(
           primaryYAxis: CategoryAxis(),
           legend: legend,
-          tooltipBehavior: widget.enableTooltip ? TooltipBehavior(enable: true) : null,
+          tooltipBehavior:
+              widget.enableTooltip ? TooltipBehavior(enable: true) : null,
           series: <CartesianSeries>[
             LineSeries<_ChartData, dynamic>(
               dataSource: combinedData,
@@ -400,10 +425,13 @@ class _ChartComponentState extends State<ChartComponent> {
           ],
         );
       case ChartType.bar:
+        List<_ChartData> combinedData =
+            _combineData(widget.xData, widget.yData);
         return SfCartesianChart(
           primaryXAxis: CategoryAxis(),
           legend: legend,
-          tooltipBehavior: widget.enableTooltip ? TooltipBehavior(enable: true) : null,
+          tooltipBehavior:
+              widget.enableTooltip ? TooltipBehavior(enable: true) : null,
           series: <CartesianSeries>[
             BarSeries<_ChartData, dynamic>(
               dataSource: combinedData,
@@ -413,9 +441,12 @@ class _ChartComponentState extends State<ChartComponent> {
           ],
         );
       case ChartType.pie:
+        List<_ChartData> combinedData =
+            _combineData(widget.xData, widget.yData);
         return SfCircularChart(
           legend: legend,
-          tooltipBehavior: widget.enableTooltip ? TooltipBehavior(enable: true) : null,
+          tooltipBehavior:
+              widget.enableTooltip ? TooltipBehavior(enable: true) : null,
           series: <CircularSeries>[
             PieSeries<_ChartData, dynamic>(
               dataSource: combinedData,
@@ -424,19 +455,52 @@ class _ChartComponentState extends State<ChartComponent> {
             ),
           ],
         );
-    // Default empty widget if no match.
+      case ChartType.stackedColumnChart:
+        // For a stacked column chart, the xData should be a list of SectorWiseDealData.
+        List<SectorWiseDealData> stackedData =
+            widget.xData.cast<SectorWiseDealData>();
+
+        return SfCartesianChart(
+          primaryXAxis: CategoryAxis(),
+          legend: legend,
+          tooltipBehavior:
+              widget.enableTooltip ? TooltipBehavior(enable: true) : null,
+          series: <CartesianSeries>[
+            StackedColumnSeries<SectorWiseDealData, String>(
+              dataSource: stackedData,
+              xValueMapper: (data, _) => data.sector,
+              yValueMapper: (data, _) => data.wonCount,
+              name: 'Won',
+            ),
+            StackedColumnSeries<SectorWiseDealData, String>(
+              dataSource: stackedData,
+              xValueMapper: (data, _) => data.sector,
+              yValueMapper: (data, _) => data.openCount,
+              name: 'Open',
+            ),
+            StackedColumnSeries<SectorWiseDealData, String>(
+              dataSource: stackedData,
+              xValueMapper: (data, _) => data.sector,
+              yValueMapper: (data, _) => data.lostCount,
+              name: 'Lost',
+            ),
+            StackedColumnSeries<SectorWiseDealData, String>(
+              dataSource: stackedData,
+              xValueMapper: (data, _) => data.sector,
+              yValueMapper: (data, _) => data.suspendedCount,
+              name: 'Suspended',
+            ),
+          ],
+        );
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Chart Component')),
-        body: Center(
-          child: _makeChart(),
-        ),
+        body: Center(child: _makeChart()),
       ),
     );
   }
