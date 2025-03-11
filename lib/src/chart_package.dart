@@ -498,7 +498,7 @@ class _ChartComponentState extends State<ChartComponent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Chart Component')),
+      // appBar: AppBar(title: const Text('Chart Component')),
       body: Center(child: _makeChart()),
     );
   }
