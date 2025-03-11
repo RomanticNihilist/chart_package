@@ -12,6 +12,10 @@ The `ChartComponent` is a generic chart package built using the Syncfusion Flutt
 ## Prerequisites
 - Add the Syncfusion Flutter chart package to your `pubspec.yaml` file:
 
+## Screenshot
+
+![Alt text](https://i.imgur.com/s5mCMNS.png "a title")
+
 ```yaml
 dependencies:
   chart_package:
