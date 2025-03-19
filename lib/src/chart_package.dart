@@ -316,7 +316,7 @@ List<Map<String, dynamic>> projects = [
   }
 ];
 
-enum ChartType { line, bar, pie, stackedColumnChart, columnChart}
+enum ChartType { line, bar, pie, stackedColumnChart, columnChart, radialChart}
 
 List<dynamic> getxData(String key) {
   return projects
@@ -504,9 +504,24 @@ class _ChartComponentState extends State<ChartComponent> {
               dataSource: combinedData,
               xValueMapper: (data, _) => data.x,
               yValueMapper: (data, _) => _parseToNum(data.y),
-              borderRadius: BorderRadius.all(Radius.circular(15)),
+              // borderRadius: BorderRadius.all(Radius.circular(15)),
             ),
           ],
+        );
+      case ChartType.radialChart:
+        List<_ChartData> combinedData =
+        _combineData(widget.xData, widget.yData);
+        return SfCircularChart(
+            legend: legend,
+            tooltipBehavior:
+            widget.enableTooltip ? TooltipBehavior(enable: true) : null,
+            series: <CircularSeries>[
+              RadialBarSeries<_ChartData, String>(
+                  dataSource: combinedData,
+                  xValueMapper: (data, _) => data.x,
+                  yValueMapper: (data, _) => data.y
+              )
+            ]
         );
     }
   }
