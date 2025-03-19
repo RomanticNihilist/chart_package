@@ -405,7 +405,7 @@ class _ChartComponentState extends State<ChartComponent> {
 
   Widget _makeChart() {
     // Create a legend widget based on the provided flag.
-    final Legend legend = Legend(isVisible: widget.showLegend);
+    final Legend legend = Legend(isVisible: widget.showLegend,position: LegendPosition.bottom);
 
     switch (widget.chartType) {
       case ChartType.line:
